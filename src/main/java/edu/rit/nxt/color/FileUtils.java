@@ -47,7 +47,7 @@ public class FileUtils {
 				int g = ThreadLocalRandom.current().nextInt(0, 256);
 				int b = ThreadLocalRandom.current().nextInt(0, 256);
 				int duration = ThreadLocalRandom.current().nextInt(minDuration, maxDuration);
-				duration = (int) (msPerCycle * ((int) (duration / msPerCycle)));
+				duration -= duration % msPerCycle;
 				Slide s = new Slide(r, g, b, duration);
 				writer.write(s.toString() + "\n");
 			}
