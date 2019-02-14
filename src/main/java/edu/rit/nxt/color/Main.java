@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 
 public class Main {
 
-	private static final int FREQ = 50;
+	private static final int FREQ = 250;
 
 	public static void main(String[] args) {
 
@@ -31,7 +31,7 @@ public class Main {
 		logger.logStates(filename + "-color-states.csv");
 
 		JFrame screen = getScreen();
-		JLabel lbl = new JLabel("Press <ENTER> to start.", SwingConstants.CENTER);
+		JLabel lbl = new JLabel("Press <SPACEBAR> to start.", SwingConstants.CENTER);
 		screen.add(lbl);
 
 		screen.addKeyListener(new KeyListener() {
@@ -42,7 +42,7 @@ public class Main {
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+				if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 					screen.remove(lbl);
 
 					// Blank cursor.
